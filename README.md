@@ -1,6 +1,20 @@
-# ROOMFIT
+# ROOMFIT - Will it fit in my room?
 
 A working 3D small-room planner with draggable furniture, configurable room dimensions, collision checks and a scroll-controlled camera tour.
+
+A furniture showcase that doubles as a small-space planner.
+
+Problem: People buy furniture without understanding its size or how much usable space it leaves.
+
+Scroll experience: A flat floor plan rises into a furnished 3D room. The camera moves from overhead to eye level.
+
+Working interaction: Enter room dimensions, drag furniture, rotate pieces, and switch materials. Show measurements and flag overlapping objects.
+
+Distinctive detail: A “daily life” slider opens wardrobe doors and pulls out chairs to reveal clearance problems.
+
+Manageable first version: One rectangular room with a bed, desk, chair, and wardrobe.
+
+Demo moment: a desk fits against the wall, but opening the wardrobe reveals why that layout fails.
 
 ## Run locally
 
@@ -9,8 +23,6 @@ python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000. Stop the server with Ctrl+C.
-
-VS Code Live Server also works. Use a server rather than double-clicking the HTML file, because browsers restrict JavaScript module imports on file URLs.
 
 No npm installation, build command, API key or backend is required. The archive includes Three.js. Your browser needs WebGL support.
 
@@ -60,59 +72,6 @@ Open-floor percentage subtracts the sum of furniture footprints from room area. 
 RoomFit is a concept planner, not architectural or purchasing advice. It has 12 fixed-size furniture and decor models and one rectangular room. It does not model a room-entry door, walking-route accessibility, walls inside the room, real product specifications, ceiling obstructions, or construction requirements. Verify physical measurements and access before buying furniture.
 
 Edits remain in the current page session. Download the text plan to retain a human-readable record. No server receives your layout.
-
-## Commit To GitHub
-
-From the project folder, create or connect a GitHub repository, then commit and push the files:
-
-```sh
-cd /path/to/Roomfit-Astra-6
-git init
-git branch -M main
-git add .
-git commit -m "Add RoomFit room planner"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-If the remote is already configured, skip `git init` and `git remote add origin`:
-
-```sh
-cd /path/to/Roomfit-Astra-6
-git add .
-git commit -m "Update RoomFit furniture catalog and controls"
-git push origin main
-```
-
-Replace `YOUR_USERNAME` and `YOUR_REPOSITORY` with the GitHub account and repository name. If GitHub created a README or other initial file, synchronize first:
-
-```sh
-git pull origin main --allow-unrelated-histories
-git push origin main
-```
-
-## Host On GitHub Pages
-
-Put these files at the root of a static host or GitHub Pages repository, keeping the `vendor` folder in place. All script references use relative paths.
-
-To enable hosting after pushing:
-
-1. Open the repository on GitHub and choose **Settings**.
-2. Open **Pages** under **Code and automation**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the `main` branch and the `/ (root)` folder, then choose **Save**.
-5. Wait for the deployment, then open the Pages URL shown by GitHub. It normally has this form:
-
-```text
-https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/
-```
-
-If RoomFit is stored inside a subfolder of a larger repository, use that subfolder in the URL, for example `https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/Roomfit-Astra-6/`. Keep `index.html`, `app.js`, `planner.js`, `styles.css` and the `vendor` folder together.
-
-GitHub Pages setup documentation:
-https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-
-The interface uses Google Fonts when online and local fallback fonts otherwise. All 3D code and materials are bundled locally.
 
 ## Validation
 
